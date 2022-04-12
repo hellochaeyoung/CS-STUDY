@@ -52,6 +52,7 @@ DispatcherServlet이 **Spring MVC의 핵심**이다.
   - BeanNameViewResolver : 빈 이름으로 뷰를 찾아서 반환
   - InternalResourceViewResolver : JSP 같이 서버 내에서 처리하는 뷰를 반환
 
+이 외에도 몇 개 더 존재한다.
 
 ### 4. Spring MVC
 
@@ -59,11 +60,11 @@ DispatcherServlet이 **Spring MVC의 핵심**이다.
 
 MVC 부분에서 스프링이 정상을 차지하게 된 이 어노테이션들에 대해 알아보려 한다.
 
-- @Controller : 스프링이 자동으로 스프링 빈으로 등록(내부에 @Component 있기 때문) -> 스프링 MVC에서 어노테이션 기반 컨트롤러로 인식한다.
-- @RequestMapping : 요청 정보를 매핑, URL과 매핑되어 있어 메소드가 호출된다.
+- **@Controller** : 스프링이 자동으로 스프링 빈으로 등록(내부에 @Component 있기 때문) -> 스프링 MVC에서 어노테이션 기반 컨트롤러로 인식한다.
+- **@RequestMapping** : 요청 정보를 매핑, URL과 매핑되어 있어 메소드가 호출된다.
   * 여태까지는 이 @RequestMapping 마다, 즉 메소드마다 컨트롤러를 생성했지만 하나의 컨트롤러에 여러 기능을 담을 수 있다.
-  * GetMapping, PostMapping
-- @RequestParam : HttpServletRequest에 들어오는 요청의 핵심 데이터, 즉 HTTP 요청 파라미터를 request 객체에 직접 접근할 필요없이 @RequestParam이라는 어노테이션을 통해 이름으로 바로 접근하여 사용할 수 있다.
+  * HTTP 메소드에 맞춰 더 세분화된 어노테이션을 더 많이 사용한다. 그리고 이걸 사용하는 게 바람직하다. -> @GetMapping, @PostMapping, @PutMapping ...
+- **@RequestParam** : HttpServletRequest에 들어오는 요청의 핵심 데이터, 즉 HTTP 요청 파라미터를 request 객체에 직접 접근할 필요없이 @RequestParam이라는 어노테이션을 통해 이름으로 바로 접근하여 사용할 수 있다. (참고 : 예제에서는 form태그로 데이터를 전송하기 때문에 content type이 x-www-form-urlencoded여도 Get 메소드일 때의 쿼리 파라미터와 동일한 형태이기 때문에 @RequestParam으로 데이터를 꺼내올 수 있다.) 
 
 또한 각 메소드들 마다 매개변수로 Model 객체를 전달받아 이 Model에 로직 처리 후 전달할 데이터들을 넣어주고 뷰의 논리 이름만 리턴해주는 이러한 간단한 방식으로 구현할 수 있게 되었다.
 
