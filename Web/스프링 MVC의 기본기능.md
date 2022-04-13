@@ -29,6 +29,7 @@ HTTP 요청, 응답 방법에 따라 어떤 기능들을 사용할 수 있는지
 * HttpServletRequest, HttpServletResponse
 * @RequestMapping
   * @GetMapping
+  
       @PathVariable : GET 메소드의 url에 표시된 파라미터 매핑 어노테이션
       
       @RequestParam : POST 메소드의 HTML 폼 방식으로 온 데이터 파라미터명으로 매핑해주는 어노테이션 
@@ -44,6 +45,7 @@ HTTP 요청, 응답 방법에 따라 어떤 기능들을 사용할 수 있는지
         (어노테이션이 생략됐을 경우 스프링이 우선순위로 String, int, Integer와 같은 단순 타입은 @RequestParam을, 그 외의 나머지 경우에는 @ModelAttribute라고 생각하기 때문에 정상 동작이 가능한 것!)
  
   * @PostMapping
+  
       InputStream, OutputStream : HTTP 메시지의 바디에 담겨진 데이터를 바로 읽어와 매핑, 로직 처리 후 response에 write하고 뷰를 반환한다. -> 과거에 사용됐던 방법, 현재는 거의 사용하지 않음!
       
       HttpEntity : HTTP 메시지의 헤더와 바디 정보를 편리하게 조회 가능하다. 요청 파라미터 어노테이션들과는 전혀 관계가 없으며 동일하게 응답에도 사용할 수 있다.
