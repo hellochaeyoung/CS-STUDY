@@ -9,15 +9,13 @@ commit;
 rollback;
 
 
-
 /*
 자료형
 Java			Oracle						MySQL
-int				INTEGER, NUMBER(5)			INT, DECIMAL(5), DECIMAL(5,2)
+int			INTEGER, NUMBER(5)			INT, DECIMAL(5), DECIMAL(5,2)
 double			NUMBER						DOUBLE
 String			VARCHAR2					VARCHAR
 Date			DATE						DATE
-
 
 */
 
@@ -26,7 +24,7 @@ Date			DATE						DATE
 ROW(행), COLUMN(열)
 
 create table 테이블명(
-	컬럼명 자료형,
+    컬럼명 자료형,
     컬럼명 자료형,
     컬럼명 자료형
     .
@@ -101,7 +99,3 @@ select * from board;
 select num, title, date_format(ymd, '%y/%m/%d') from board;
 
 select date_format(ymd, '%y %m %d %h %i %s') from board; -- %Y : 년도 4자리, %y : 년도 끝 두자리
-
-
-
-
