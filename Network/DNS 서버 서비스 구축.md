@@ -142,7 +142,7 @@ Linux + apache + php + mysql(mariadb)
 
 ```
 
-# 3. 동일 IP 여러 개로 사용하기?
+# 3. DNS 서비스 구축 - blog, intra
 
 - 포트 사용하기
     - vi /etc/httpd/conf/httpd.conf
